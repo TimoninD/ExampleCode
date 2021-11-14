@@ -1,0 +1,6 @@
+[versions]
+compileSdk = "31"
+minSdk = "21"
+tagetSdk = "30"
+kotlin = "1.5.31"
+agp = "7.0.3"
