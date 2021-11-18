@@ -1,4 +1,4 @@
-package ru.rocket.template
+package ru.daniil.example.ui.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            HelloWorldComponent("Rocket It")
+            NavigationTestTheme{
+                MainScreen()
+            }
         }
     }
 

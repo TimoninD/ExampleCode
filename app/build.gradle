@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
-    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -41,6 +40,9 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.compose.get()
     }
+    applicationVariants.all { variant ->
+        variant.buildConfigField('String', 'BASE_URL', '"https://api.coinpaprika.com/v1/"')
+    }
 }
 
 dependencies {
@@ -55,6 +57,10 @@ dependencies {
     implementation platform(libs.firebase.platform)
     implementation (libs.firebase.analytics)
     implementation (libs.firebase.crashlytics)
+    implementation (libs.bundles.mvi)
 
-    implementation(libs.bundles.androidx.navigation)
+    implementation(libs.bundles.retrofit2)
+    implementation(libs.bundles.okhttp3)
+
+    implementation(libs.bundles.koin.android)
 }
